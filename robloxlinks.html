@@ -18,7 +18,7 @@
         }
         h1 {
             margin-top: 50px;
-            font-size: 6vw; /* Use vw to make it responsive */
+            font-size: 48px;
             text-shadow: 2px 2px 4px #333;
         }
         .button-container {
@@ -29,10 +29,11 @@
             max-width: 100vw;
             padding: 20px;
             box-sizing: border-box;
+            height: auto; /* Allow container to grow */
         }
         .button-group {
             margin: 20px;
-            text-align: center; /* Center align the content inside each group */
+            position: relative; /* Add position relative */
         }
         .button {
             margin-top: 10px;
@@ -41,24 +42,24 @@
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            width: 100%;
-            max-width: 200px;
+            width: 200px;
             transition: transform 0.3s ease;
             display: block;
-            box-sizing: border-box;
+            z-index: 2; /* Ensure buttons are above images */
         }
         .button:hover {
             background-color: #6d6d6d;
             transform: scale(1.1);
         }
         .button-img {
-            width: 100%;
-            max-width: 200px;
+            width: 200px;
             height: auto;
             transition: transform 0.3s ease;
             margin-top: 10px; /* Add margin top for spacing */
         }
-        .button:hover + .button-img,
+        .button:hover + .button-img {
+            transform: scale(1.1); /* Scale up image by 10% on button hover */
+        }
         .button:hover ~ .button-img {
             transform: scale(1.1); /* Scale up image by 10% on button hover */
         }
